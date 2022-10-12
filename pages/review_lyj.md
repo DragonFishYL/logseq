@@ -1,0 +1,35 @@
+public:: false
+
+- title:: review_lyj
+- plunder
+- match
+	- 这中检测方式很巧妙，但是可能会增加一丢丢包的数据大小，其实影响也不是很大(如果这个切片更长就不建议这样的检测方式)
+		- ![image.png](../assets/image_1663116126475_0.png)
+	- 没有特殊的用途，没必要为删除的数据单独处理
+		- ![image.png](../assets/image_1663141522926_0.png)
+	- 变量重复定义
+		- ![image.png](../assets/image_1663141741445_0.png)
+	- 如果并不是扣除物资那一步出错，这里会不会多加了物资
+		- 可以给sendGamePlunder返回的错误加个标识
+		- 建议更新物资不要放在game服务中
+		- ![image.png](../assets/image_1663124587341_0.png)
+	- userId是否更合适一些
+		- ![image.png](../assets/image_1663124831572_0.png)
+	- 直接给1就可以
+		- ![image.png](../assets/image_1663135907543_0.png)
+	- 参数传递的方式尽可能保持一致，建议最好先定义变量再传递
+		- ![image.png](../assets/image_1663137702549_0.png)
+- purchase
+- verifyOrder
+	- 可以使用errors.New()代替fmt.Errorf(),fmt.Errorf()不带参数其实就是调用errors.New()
+		- ![image.png](../assets/image_1663144865557_0.png)
+	- 已经是具名返回值，不需要对变量再次初始化
+		- 还有一些类似的err变量的作用域问题
+		- ![image.png](../assets/image_1663145565292_0.png)
+	- 变量命名和包名重复了，小心会出错
+		- ![image.png](../assets/image_1663145762957_0.png)
+	- 这个判空应该可以去掉
+		- ![image.png](../assets/image_1663145865211_0.png)
+	- 这两个更新数据的错误处理方式可以保持一致
+		- ![image.png](../assets/image_1663146243469_0.png)
+-

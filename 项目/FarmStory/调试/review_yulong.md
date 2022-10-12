@@ -1,0 +1,113 @@
+- camp
+	- 移动物品
+		- ![image.png](../assets/image_1661304488276_0.png)
+		- MoveInfo建议使用指针,下面赋值的MoveInfo{}是无效的，并没有被使用到，可以赋nil
+		- ![image.png](../assets/image_1661304087333_0.png)
+		- 这块对格子状态的检测是不是该用下面的方法，里面的检测更加全面一点，下面对afterGrid的检测也一样
+		- ![image.png](../assets/image_1661304422871_0.png)
+		- 这个ok的作用域可以缩小
+		- ![image.png](../assets/image_1661305315797_0.png)
+		- 这两个for循环不是可以放在一起吗*****
+	- 合成物品
+		- 应该还要检测合成物品的状态，比如未建造成功的物品不能参与合成
+		- ![image.png](../assets/image_1661306350996_0.png)
+		- 作用域
+		- ![image.png](../assets/image_1661311659079_0.png)
+		- 合成奖励是固定的，应该用checkOutputItemEqual()
+		- ![image.png](../assets/image_1661312509996_0.png)
+		- 建议类似这种可以不需要判空再去调用它，方法内部是有判空的
+		- ==================================
+		- ![image.png](../assets/image_1662171076906_0.png)
+		- 好像这两种判断效果是一样的，下面的判断应该没有必要了
+		- ![image.png](../assets/image_1662171742363_0.png){:height 136, :width 600}
+		- 直接放在上图的判断里就行了
+	- 点击物品
+		- ![image.png](../assets/image_1661428683754_0.png){:height 162, :width 716}
+		- 感觉没必要直接报错，只是一个优先级关系，并不影响总产出
+		- ![image.png](../assets/image_1661429226630_0.png)
+		- 这块应该对产出的爱心值做检测，不能各加各的，可以用u.checkAddLoveValue()方法
+		- ![image.png](../assets/image_1661430446188_0.png)
+		- 这个方法里面没看懂，只是把list存入库貌似不需要那么复杂
+		- ![image.png](../assets/image_1661430582063_0.png)
+		- 直接用u.updateLoveValue()就好，type是个无效传参
+		- ![image.png](../assets/image_1661431055814_0.png)
+		- 我很好奇为什么协议不直接发加了多少净化之力，现在这样还要查两次配置
+		- ![image.png](../assets/image_1661431298566_0.png)
+		- 先添加物品再删除，如果产出物品放在点击物品的位置呢(我不知道允不允许放在原地)，那么这个产出物品不就没了
+	- 建造物品
+		- ![image.png](../assets/image_1661481093119_0.png)
+		- 超级工人剩余时间小于或等于建造时间都应该删掉
+		- ![image.png](../assets/image_1661498662514_0.png)
+		- 这块应该放入u.checkUseWorker方法中，如果在删除超级工人的情况下出现移动超级工人应该是报错的
+		- ![image.png](../assets/image_1661499211362_0.png)
+		- 用剩余时间减去req.GetBuildTime(开始建造时间)不就裂开了，应该是减去配置表里面的建造时间(check的时候还是对的)，要删除就不用把超级工人的Time置为0了反正后面就删了
+		- ![image.png](../assets/image_1661499699555_0.png)
+		- u.moveObject里面还有对移动的检测，前面已经更新了一部分数据了，现在才检测是不是不太合适
+		- ![image.png](../assets/image_1661498831063_0.png)
+		- 这块就只有删除超级工人和不删除两种情况，用req.GetWorker().GetRemoveObj() 做区分就行了，移动超级工人也只会在没有删除的前提下才需要调用，这块就体现了上面说的检查是否需要传移动超级工人的重要性，如果超级工人本身是要删除的的，但是他给你传过来个移动位置，然后这块你先把它移动了再去删除它岂不是就出现了bug
+	- 采集物品
+		- ![image.png](../assets/image_1661505732797_0.png)
+		- check里面不是对type检测过了吗
+		- ![image.png](../assets/image_1661505887899_0.png){:height 213, :width 618}
+		- 为什么要先减去一个工人，判断不是最后一次采集又加上呢，只在最后一次采集去减就行了吧
+	- 点击作物、采集、建造、建筑充能立即完成
+		- ![image.png](../assets/image_1661565913944_0.png)
+		- 这块感觉只用if区分各种情况有点问题，如果发过来的id所有情况都不符合会不会出bug
+		- ![image.png](../assets/image_1661566717041_0.png)
+		- 如果它在免费跳过时间内并且他也没有发错误的消耗物资过来，这块就可以直接return了，没必要再走下面的钞票验证
+		- ![image.png](../assets/image_1661567496769_0.png)
+		- 无效操作
+		- ![image.png](../assets/image_1661567886241_0.png)
+		- 这块不用else if 是不是就连起来了，建造->采集->充能全都走了一遍，我实验了下：普通建造会连续走前两个好像
+	- 释放物品库存
+		- ![image.png](../assets/image_1661570860914_0.png)
+		- 并没有判断是否释放完了
+		- ![image.png](../assets/image_1661571999875_0.png)
+		- check没有判断它是不是该出现，不销毁的情况下出现产出应该报错
+	- ======================================
+	- 操作超级工人立即完成
+		- ![image.png](../assets/image_1662447894390_0.png)
+		- 为什么不判断它首先是一个大资源建造再去走checkBigSourceUpgrade()方法呢，没报错的原因是FactoryUpgrade表找不到id只打印log
+		- ![image.png](../assets/image_1662448832262_0.png)
+		- 可以考虑在下面再加上如果删除超级工人就不应该出现移动，不删除就必须移动(因为看到后面移动超级工人时用的req.Worker.MoveList，如果没传移动空指针了，或者使用get保证他不会panic)，感觉moveObject()还是应该拆开先检查再更新
+		- ![image.png](../assets/image_1662450289551_0.png)
+		- 这个log的作用？
+	- 采集、建造停止
+		- ![image.png](../assets/image_1662463014076_0.png)
+		- 如果这块不区分状态呢 ，只根据是否使用超级工人判断是否返回工人，看似没有影响
+	- 四合一事件
+		- ![image.png](../assets/image_1662464095367_0.png)
+		- 为什么这块没有调checkCoordinate()检查格子呢
+	- 刷新随机商店
+		- ![image.png](../assets/image_1662617997453_0.png)
+		- 加下注释，大小写是不是也得统一，后面可以考虑使用0
+		- ![image.png](../assets/image_1662618649163_0.png)
+		- 用else if吧
+		- ![image.png](../assets/image_1662618968903_0.png)
+		- 统一一下吧，别的地方都用的下面这个封装的方法
+		- ![image.png](../assets/image_1662619398679_0.png)
+		- 建议还是别用取绝对值，万一它传个正值呢，这种只有一种物资的其实可以考虑只传数量，log有点迷
+		- ![image.png](../assets/image_1662619731559_0.png)
+		- 这个东西感觉没必要，不到等级就算刷了也不会显示吧，刷新时间到的情况添加时间检测，商店作物过季添加过季检测
+		- ![image.png](../assets/image_1662623764326_0.png)
+		- 应该在这块获取到商店数据后进行更新，在game层返回所需数据
+	- 购买随机商店商品
+		- ![image.png](../assets/image_1662624234777_0.png)
+		- 为什么不用data.FloatingInfo和data.Material
+		- ![image.png](../assets/image_1662624873582_0.png)
+		- 这个应该判断的时候把这次也算上吧
+		- ![image.png](../assets/image_1662626438743_0.png)
+		- 绝对值问题
+	- 购买通用载具物品
+		- ![image.png](../assets/image_1662627935075_0.png)
+		- 物品id没必要把   添加物品里面有
+		- ![image.png](../assets/image_1662628067647_0.png)
+		- 绝对值问题，既然只能消耗钞票，不如只传数量
+		- ![image.png](../assets/image_1662628376588_0.png)
+		- 本身就算material了，不用封装了
+	- 兑换过季作物
+		- ![image.png](../assets/image_1662628494173_0.png)
+		- 作用域
+		- ![image.png](../assets/image_1662628617981_0.png)
+		- 用updateMaterial
+-

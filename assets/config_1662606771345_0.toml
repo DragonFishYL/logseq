@@ -1,0 +1,47 @@
+ProcessName = "# 内网测试服18 \n "
+DDExtentInfo = "#  监控 \n "
+CheckCoreFileCMD = "cd ~/workspace/synthesis_and_coc/ && git status | grep 'core.'"
+GetCPUUseTop = "ps -axwo %cpu,%mem,comm --sort=-rss |head -10"
+GetMemUseTop = "ps -axwo %mem,%cpu,comm --sort=-rss |head -10"
+CpuSecond = 10
+TicketSecond = 20
+SendBeginHour = 9
+SendEndHour   = 22
+# 监控群
+# DDUrl = https://oapi.dingtalk.com/robot/send?access_token=e82c4c0cf1b29364be689552be26c49f2fc0c17195eb44c6798ced89613570bd
+# 服务端
+# DDUrl = "https://oapi.dingtalk.com/robot/send?access_token=684d07b07cecd215e25f35f303cdcfc71458397dcb571551f7d2912529ac11da"
+# 刘延军测试
+DDUrl = "https://oapi.dingtalk.com/robot/send?access_token=4394dbba1176c6668cb328e874f873ccfea846be036aa850a55056243b66ae1e"
+IsPrintLog = true
+AtAll = true
+UseMaxValue = 80.0
+[ServerInfo]
+    [ServerInfo.cpu]
+    Name        = "cpu使用率"
+    UseMaxValue = 80.0
+    [ServerInfo.mem]
+    Name        = "内存使用率"
+    UseMaxValue = 80.0
+    [ServerInfo.disk]
+    Name        = "硬盘使用率"
+    UseMaxValue = 80.0
+
+
+[Monitor]
+Service = [
+    {Name="farm.gateway.access", Count=1},
+    {Name="farm.gateway.api", Count=1},
+    {Name="farm.gateway.chat", Count=1},
+    {Name="farm.service.game", Count=1},
+    {Name="farm.service.login", Count=1},
+    {Name="farm.service.mail", Count=1},
+    {Name="farm.service.purchase", Count=1},
+    {Name="farm.service.user", Count=1},
+    {Name="farm.service.logser", Count=1},
+    {Name="farm.service.configure", Count=1},
+    {Name="farm.backstage.master", Count=1},
+    {Name="farm.service.crontab", Count=1},
+    {Name="farm.service.plunder", Count=1}
+]
+
