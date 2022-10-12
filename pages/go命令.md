@@ -1,0 +1,7 @@
+- go run
+	- go run main.go
+- go test
+	- 运行main_test.go文件的所有测试用例
+		- go test -v main_test.go
+	- 运行main_test.go文件中名为TestA方法的测试用例
+		- go test -v -run TestA$ main_test.go
