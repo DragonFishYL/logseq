@@ -7,8 +7,11 @@ title:: cheat.sh手册
 	- curl cht.sh/tar
 	- ![image.png](../assets/image_1665537164888_0.png)
 - 示例2
-	- surl cht.sh/docker
-	- ![image.png](../assets/image_1665537236712_0.png)
+	- curl cht.sh/ls
+	- ![image.png](../assets/image_1665644724108_0.png)
 - 示例3
+	- curl cht.sh/docker
+	- ![image.png](../assets/image_1665537236712_0.png)
+- 示例4
 	- curl cht.sh/go/append+slice   (cht.sh/语言/命令+语法)
 	- ![image.png](../assets/image_1665537330342_0.png)
