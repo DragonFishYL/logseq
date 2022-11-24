@@ -11,7 +11,7 @@
 	- ```shell
 	  check connection 
 	  ```
-	- ![image.png](../assets/image_1666326262164_0.png)
+	- ![image.png](../assets/image_1666326262164_0.png){:height 32, :width 95}
 	- ![image.png](../assets/image_1666326312207_0.png)
 -
 - Ubuntu 安装 clash
