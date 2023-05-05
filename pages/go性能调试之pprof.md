@@ -68,14 +68,12 @@
 			  ```
 			- ![image.png](../assets/image_1665713721731_0.png)
 		- url请求中设置debug=1：
-			- ```
-			  http://192.168.196.18:11181/debug/pprof/goroutine?debug=1
+			- http://192.168.196.18:11181/debug/pprof/goroutine?debug=1
 			  
 			  // 下图解析
 			  goroutine profile: total 38   // 表示的是gorutine的数量
 			  7 @ 0xa0e596 0xa1e7b2 0xf9df29 0xa405e1   //表示的是其中有7个gorutine运行再当前调用栈,并且停在相同位置
 			  0xf9df28	github.com/patrickmn/go-cache.(*janitor).Run+0x88	/home/devel/gopath/pkg/mod/github.com/patrickmn/go-cache@v2.1.0+incompatible/cache.go:1079  // 表示当前gorutine的调用栈,列出了函数和所在文件行数
-			  ```
 			- ![image.png](../assets/image_1665731911337_0.png)
 		- url请求中设置debug=2：
 			- ```

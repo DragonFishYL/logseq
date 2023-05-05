@@ -1,0 +1,7 @@
+- 主机间相互免密钥
+	- 第一步
+		- 创建公钥私钥：ssh-keygen -t rsa -C 注册git的邮箱
+	- 第二步
+		- 给远程主机添加免密钥标识(将本机公钥发送给远程主机存储到远程主机的~/.ssh/authorized_keys文件)：ssh-copy-id -i ~/.ssh/id_rsa.pub devel@192.168.196.19
+	- 第三步
+		- 执行连接：ssh devel@192.168.196.19

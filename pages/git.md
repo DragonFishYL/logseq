@@ -79,8 +79,7 @@
 	  git clone --depth 1 git@47.107.251.91:appcpi-game/guard_and_merge.git
 	  ```
 - commit
-	- ```
-	  # 提交暂存区到仓库区
+	- # 提交暂存区到仓库区
 	  # git commit -m [message]
 	  
 	  # 提交暂存区的指定文件到仓库区
@@ -98,7 +97,6 @@
 	  
 	  # 重做上一次commit，并包括指定文件的新变化
 	  # git commit --amend [file1] [file2] ...
-	  ```
 	- 修改已经commit的备注
 		- ```
 		  git commit --amend
@@ -180,6 +178,9 @@
 	  ```
 - 查看信息
 	- ```
+	  #查看本地分支及关联的远程分支信息
+	  git branch -vv
+	  
 	  # 显示有变更的文件
 	  # git status
 	  
