@@ -40,7 +40,9 @@
 		- ![image.png](../assets/image_1665569001390_0.png)
 -
 - # web模式
+  collapsed:: true
 	- ## 方式1
+	  collapsed:: true
 		- ```
 		  package main
 		  
@@ -85,6 +87,7 @@
 			- ![image.png](../assets/image_1665731954270_0.png)
 	- ## 方式二
 	- 查看svg图
+	  collapsed:: true
 		- 给予方式一，生成 access_heap.out 文件
 			- ```
 			  #第一步：生成.out文件
