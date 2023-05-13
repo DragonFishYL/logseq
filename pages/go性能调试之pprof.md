@@ -83,4 +83,6 @@
 			  goroutine 9 [select, 2 minutes]：9是goroutine id，[]中是当前goroutine的状态，阻塞在写channel，并且阻塞了2分钟，长时间运行的系统，你能看到阻塞时间更长的情况。
 			  ```
 			- ![image.png](../assets/image_1665731954270_0.png)
-			-
+-
+- SVG模式
+	-
