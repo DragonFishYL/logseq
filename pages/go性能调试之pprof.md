@@ -85,13 +85,13 @@
 			- ![image.png](../assets/image_1665731954270_0.png)
 	- ## 方式二
 	- 查看svg图
-		- 给予方式一，生成 service.out 文件
+		- 给予方式一，生成 access_heap.out 文件
 			- ```
 			  #第一步：生成.out文件
 			  curl http://192.168.196.18:8016/debug/pprof/heap?seconds=30 > /tmp/access_heap.out
 			  #第二步：下载到本地
 			  sz /tmp/access_heap.out
-			  #第三步: 在本地的.out文件同目录下执行
+			  #第三步: 在本地的access_heap.out文件同目录下执行
 			  go tool pprof access_heap.out
 			  #第四步：输入命令 web
 			  即刻跳转到浏览器查看内存svg分布图
