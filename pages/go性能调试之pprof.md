@@ -93,4 +93,8 @@
 			  sz /tmp/access_heap.out
 			  #第三步: 在本地的.out文件同目录下执行
 			  go tool pprof access_heap.out
+			  #第四步：输入命令 web
+			  即刻跳转到浏览器查看内存svg分布图
 			  ```
+		- ![image.png](../assets/image_1683970177915_0.png)
+-
