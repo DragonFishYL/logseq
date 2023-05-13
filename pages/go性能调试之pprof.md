@@ -84,4 +84,7 @@
 			  ```
 			- ![image.png](../assets/image_1665731954270_0.png)
 	- ## 方式二
-	-
+	- 查看svg图
+		- 给予方式一，生成 service.out 文件
+			- ```
+			  ```
