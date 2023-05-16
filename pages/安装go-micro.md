@@ -9,6 +9,17 @@
 	  make install
 	  
 	  ```
+	- 安装完成之后验证是否安装成功
+	- ```
+	   wangshibiao@192  ~/Downloads/tmp/protobuf-3.19.4  which protoc
+	  /usr/local/bin/protoc
+	   wangshibiao@192  ~/Downloads/tmp/protobuf-3.19.4  protoc --version
+	  libprotoc 3.19.4
+	   wangshibiao@192  ~/Downloads/tmp/protobuf-3.19.4 
+	  
+	  ```
+- ### 切换protobuf版本
+	- 假设当前系统中之前有按前述方法安装过多个版本的protobuf,那么若想方便地切换protof版本，只需要进入对应目录，执行make install即可。
 - ### 安装go-micro v3
 	- **注意: **如下的各个工具的版本要严格匹配，否则可能会有问题。
 	- 安装go-micro工具集
