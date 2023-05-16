@@ -43,4 +43,25 @@
 - ### 切换go-micro版本
 	- 若您有多个项目使用的是不同的go-micro版本，需要经常切换版本，那么建议编写切换脚本。示例如下：
 	- ```
+	   wangshibiao@192  ~  cat /usr/local/bin/switch_go-micro_v2.sh
+	  #! /bin/sh
+	  
+	  cd ~/Downloads/tmp/protobuf-3.10.0 && make install
+	  
+	  go get github.com/micro/micro/v2@v2.4.0
+	  go get github.com/golang/protobuf/proto@v1.3.5
+	  go get github.com/golang/protobuf/protoc-gen-go@v1.3.5
+	  go get github.com/micro/protoc-gen-micro/v2@v2.0.0
+	   wangshibiao@192  ~ 
+	   wangshibiao@192  ~  cat /usr/local/bin/switch_go-micro_v4.sh
+	  #! /bin/sh
+	  
+	  cd ~/Downloads/tmp/protobuf-3.19.4
+	  make install
+	  
+	  go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+	  go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+	  go install github.com/asim/go-micro/cmd/protoc-gen-micro/v4@latest
+	   wangshibiao@192  ~ 
+	  
 	  ```
