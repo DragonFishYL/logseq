@@ -84,3 +84,4 @@
 		- 删除
 			- remove 删除
 				- `db.inventory.remove({_id:666001})`
+- ## 备份与恢复数据
