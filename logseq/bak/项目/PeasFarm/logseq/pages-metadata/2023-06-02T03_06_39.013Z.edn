@@ -31,12 +31,6 @@
  {:block/name "in-progress",
   :block/created-at 1683255281394,
   :block/updated-at 1683255281394}
- {:block/name "jun 1st, 2023",
-  :block/created-at 1685548843078,
-  :block/updated-at 1685548843078}
- {:block/name "jun 2nd, 2023",
-  :block/created-at 1685635243062,
-  :block/updated-at 1685670240157}
  {:block/name "later",
   :block/created-at 1683255281394,
   :block/updated-at 1683255281394}
@@ -87,7 +81,7 @@
   :block/updated-at 1685451507669}
  {:block/name "may 31st, 2023",
   :block/created-at 1685462447137,
-  :block/updated-at 1685612342044}
+  :block/updated-at 1685462447137}
  {:block/name "may 5th, 2023",
   :block/created-at 1683255203115,
   :block/updated-at 1683514285549}
