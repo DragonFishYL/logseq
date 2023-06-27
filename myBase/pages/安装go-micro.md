@@ -35,11 +35,9 @@
 - ### 安装go-micro v4
 	- 安装protobuf 根据教程安装protobuf, 安装3.10.0版本的protobuf。
 	- 安装go-micro工具集
-	- ```
-	  go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+	- go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 	  go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 	  go install github.com/asim/go-micro/cmd/protoc-gen-micro/v4@latest
-	  ```
 - ### 切换go-micro版本
 	- 若您有多个项目使用的是不同的go-micro版本，需要经常切换版本，那么建议编写切换脚本。示例如下：
 	- ```
