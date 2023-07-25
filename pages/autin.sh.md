@@ -1,0 +1,4 @@
+title:: autin.sh
+
+-
+- ![lQLPJxaJrsaIVLDNBFLNCHaw8ePG--d6AYoEtJhhEYASAA_2166_1106.png](../assets/lQLPJxaJrsaIVLDNBFLNCHaw8ePG--d6AYoEtJhhEYASAA_2166_1106_1690269671449_0.png)
