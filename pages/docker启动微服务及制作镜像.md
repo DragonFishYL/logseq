@@ -45,17 +45,22 @@
 	- 在上述命令中，-t参数用于指定镜像的名称和标签，.表示使用当前目录中的Dockerfile文件进行构建。
 - 4 制作docker镜像
 	- 4.1 登录docker
-	- 如果报一下错误说明~/.docker/config.json文件被损坏
 	- ```
-	  panic: assignment to entry in nil map
-	  
-	  goroutine 1 [running]:
-	  github.com/docker/cli/cli/config/credentials.(*fileStore).Store(0xc000387480, {{0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x1c9b9b7, ...}, ...})
-	  /go/src/github.com/docker/cli/cli/config/credentials/file_store.go:55 +0x49
-	  github.com/docker/cli/cli/config/credentials.(*nativeStore).Store(0xc000408738, {{0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x1c9b9b7, ...}, ...})
-	  /go/src/github.com/docker/cli/cli/config/credentials/native_store.go:95 +0xb5
-	  github.com/docker/cli/cli/command/registry.runLogin({0x1e65cd8, 0xc0003940f0}, {{0x0, 0x0}, {0xc000044110, 0xa}, {0x0, 0x0}, 0x0})
-	  /go/src/github.com/docker/cli/cli/command/registry/login.go:156 +0x55d
 	  ```
+	- 如果报一下错误说明~/.docker/config.json文件被损坏
+		- ```
+		  panic: assignment to entry in nil map
+		  
+		  goroutine 1 [running]:
+		  github.com/docker/cli/cli/config/credentials.(*fileStore).Store(0xc000387480, {{0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x1c9b9b7, ...}, ...})
+		  /go/src/github.com/docker/cli/cli/config/credentials/file_store.go:55 +0x49
+		  github.com/docker/cli/cli/config/credentials.(*nativeStore).Store(0xc000408738, {{0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x1c9b9b7, ...}, ...})
+		  /go/src/github.com/docker/cli/cli/config/credentials/native_store.go:95 +0xb5
+		  github.com/docker/cli/cli/command/registry.runLogin({0x1e65cd8, 0xc0003940f0}, {{0x0, 0x0}, {0xc000044110, 0xa}, {0x0, 0x0}, 0x0})
+		  /go/src/github.com/docker/cli/cli/command/registry/login.go:156 +0x55d
+		  ```
 	- 解决方案
-		-
+		- ```
+		  mv ~/.docker/config.json ~/.docker/config.json.backup
+		  ```
+		- 然后重启docker即可
