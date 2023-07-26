@@ -46,6 +46,7 @@
 - 4 制作docker镜像
 	- 4.1 登录docker
 	- ```
+	  docker login -u1435033280 -p3500275Yl
 	  ```
 	- 如果报一下错误说明~/.docker/config.json文件被损坏
 		- ```
