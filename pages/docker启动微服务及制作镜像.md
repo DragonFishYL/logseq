@@ -74,5 +74,5 @@
 		  ```
 	- 5.2 最后，使用docker image push命令将标记后的Docker镜像推送到Docker Hub：
 		- ```
-		  docker image push username/my-repo:1.0
+		  docker image push 1435033280/myapp:1.0
 		  ```
