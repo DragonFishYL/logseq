@@ -65,4 +65,8 @@
 		  mv ~/.docker/config.json ~/.docker/config.json.backup
 		  ```
 		- 然后重启docker,然后再重新登陆
-- 5 制作
+- 5 制作docker镜像
+	- 使用docker tag命令将本地的Docker镜像标记为要推送到Docker Hub上的仓库：
+		- ```
+		  docker tag my-image:1.0 username/my-repo:1.0
+		  ```
