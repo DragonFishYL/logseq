@@ -43,7 +43,7 @@
 	  docker build -t myapp .
 	  ```
 	- 在上述命令中，-t参数用于指定镜像的名称和标签，.表示使用当前目录中的Dockerfile文件进行构建。
-- 4 制作docker镜像
+- 4 登录docker仓库
 	- 4.1 登录docker
 	- ```
 	  docker login -u1435033280 -p3500275Yl
@@ -64,4 +64,5 @@
 		- ```
 		  mv ~/.docker/config.json ~/.docker/config.json.backup
 		  ```
-		- 然后重启docker即可
+		- 然后重启docker,然后再重新登陆
+- 5 制作
