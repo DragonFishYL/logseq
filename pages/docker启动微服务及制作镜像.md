@@ -21,4 +21,22 @@
 	  }
 	  ```
 	- 在上述代码中，我们使用Gin框架定义了一个Web服务，该服务可以接收来自客户端的HTTP请求，并将请求中的参数ID返回给客户端。
--
+- 2 编写Dockerfile
+	- 接下来，我们需要编写一个Dockerfile文件，用于定义Docker镜像的构建过程。以下是一个简单的Dockerfile示例：
+	- ```
+	  FROM golang:1.17.1-alpine
+	  
+	  RUN mkdir /app
+	  ADD . /app
+	  WORKDIR /app
+	  
+	  RUN go build -o main .
+	  
+	  EXPOSE 8080
+	  
+	  CMD ["/app/main"]
+	  ```
+	- 在上述Dockerfile中，我们使用了golang:1.17.1-alpine作为基础镜像，该镜像包含了Go语言的运行环境。然后，我们将应用程序的源代码复制到容器的/app目录中，并使用go build命令编译应用程序。最后，我们使用EXPOSE指令将应用程序的端口暴露出来，并使用CMD指令定义容器启动后要执行的命令。
+- 3 构建Docker镜像
+	- 在完成了Dockerfile的编写后，我们需要使用Docker命令来构建Docker镜像。可以使用以下命令来构建镜像：
+	-
