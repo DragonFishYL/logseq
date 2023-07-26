@@ -66,7 +66,13 @@
 		  ```
 		- 然后重启docker,然后再重新登陆
 - 5 制作docker镜像
-	- 使用docker tag命令将本地的Docker镜像标记为要推送到Docker Hub上的仓库：
+	- 5.1 使用docker tag命令将本地的Docker镜像标记为要推送到Docker Hub上的仓库：
 		- ```
-		  docker tag my-image:1.0 username/my-repo:1.0
+		  # 1435033280 为用户名
+		  # learn 为仓库名
+		  docker tag myapp:1.0 1435033280/learn:myapp:1.0
+		  ```
+	- 5.2 最后，使用docker image push命令将标记后的Docker镜像推送到Docker Hub：
+		- ```
+		  docker image push username/my-repo:1.0
 		  ```
