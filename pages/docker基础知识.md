@@ -75,11 +75,13 @@
 	- 4.3 退出容器2种方式
 		- ```
 		  1. exit：停止容器并退出容器，回到宿主机
-		  2. Ctrl+p+q 退出容器，回到宿主机
+		  2. Ctrl+p+q 退出容器，回到宿主机启动容器
 		  ```
-	- docker start 容器ID/容器名称(启动容器)
+	- 4.4 docker start 启动容器(容器ID/容器名称)
 		- 第一步：docker ps -n 10  (查看最近启动10个容器)
 		- 第二步：得到第一步显示的容器名称或者容器ID，执行  docker start 容器ID/容器名称
 		- ```
 		  docker start 容器ID/容器名称
 		  ```
+	- 4.5 docker restart 重新启动容器(容器ID/容器名称)
+		-
