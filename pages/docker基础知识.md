@@ -84,4 +84,17 @@
 		  docker start 容器ID/容器名称
 		  ```
 	- 4.5 docker restart 重新启动容器(容器ID/容器名称)
-		-
+		- ```
+		  docker restart 容器ID/容器名称
+		  ```
+	- 4.6 停止容器2种方式
+		- ```
+		  1. docker stop 容器ID/容器名称  (正常停止)
+		  2. docker kill 容器ID/容器名称 (强制停止)
+		  ```
+	- 4.7 删除容器
+		- ```
+		  1.docker rm 容器ID/容器名称 #删除容器
+		  2.docker rm -f 容器ID/容器名称 #强制删除容器(先停止容器，再删除容器)
+		  3.docker rm -f $(docker ps -qa) #根据容器ID批量强制删除容器
+		  ```
