@@ -119,5 +119,16 @@
 		  ```
 	- 4.12 docker进入容器中的两种方式
 		- attach：进入容器中执行命令
+			- ```
+			  docker attach  容器ID/容器名称  #进入容器命令行
+			  ls -l /tmp
+			  ```
+		- exec：在宿主机执行命令，即可返回容器中内容
+			- ```
+			  docker exec 容器ID/容器名称 ls -l /tmp  #等价于attach进入容器内执行ls
+			  docker exec -it 容器ID/容器名称 /bin/bash #进入容器命令行
+			  ```
+	- 4.13 docker cp (从容器内复制文件到宿主机)
 		- ```
+		  docker cp 容器ID:容器内目标文件名 宿主机路径  #将容器内复制文件到宿主机
 		  ```
