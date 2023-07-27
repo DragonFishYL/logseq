@@ -69,4 +69,7 @@
 		  docker run -it --name newName 镜像ID/镜像名称
 		  docker run -d -p 6789:80 nginx #宿主机6789端口映射到容器80端口，新指定的6789端口在阿里云安全组规则添加即可访问
 		  ```
-	-
+		- ![image.png](../assets/image_1690422385829_0.png)
+	- 4.2 docker ps
+		- ![image.png](../assets/image_1690422415145_0.png)
+	- 4.3
