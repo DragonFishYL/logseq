@@ -98,3 +98,14 @@
 		  2.docker rm -f 容器ID/容器名称 #强制删除容器(先停止容器，再删除容器)
 		  3.docker rm -f $(docker ps -qa) #根据容器ID批量强制删除容器
 		  ```
+	- 4.8 以守护进程的方式运行容器
+		- ```
+		  docker run -d 镜像ID/镜像名称 /bin/sh -c "while true;do echo hello world;sleep 2;done" #以守护进程的方式运行对应镜像生成的容器并每2秒输出hello world。
+		  ```
+	- 4.9 docker logs(查看对应容器产生的日志)
+		- ```
+		  docker logs -t -f --tail 3 容器ID/容器名称  
+		  -t 时间
+		  -f 实时追加
+		  -tail 3 看最新3行记录
+		  ```
