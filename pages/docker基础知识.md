@@ -59,3 +59,6 @@
 		  docker version
 		  ```
 	- 3.10卸载旧版本的包
+		- ```
+		  sudo yum erase docker-common-2:1.12.6-68.gitec8512b.el7.centos.x86_64
+		  ```
