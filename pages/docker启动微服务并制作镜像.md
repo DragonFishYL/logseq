@@ -40,7 +40,11 @@
 - 3 构建Docker镜像
 	- 在完成了Dockerfile的编写后，我们需要使用Docker命令来构建Docker镜像。可以使用以下命令来构建镜像：
 	- ```
+	  # build
 	  docker build -t myapp:1.0 .
+	  
+	  # commit
+	  docker commit -a="作者信息" -m="备注信息" 镜像目录/镜像名称:版本号
 	  ```
 	- 在上述命令中，-t参数用于指定镜像的名称和标签，.表示使用当前目录中的Dockerfile文件进行构建。
 - 4 登录docker仓库
