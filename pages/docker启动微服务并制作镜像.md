@@ -39,13 +39,11 @@
 	- 在上述Dockerfile中，我们使用了golang:1.17.1-alpine作为基础镜像，该镜像包含了Go语言的运行环境。然后，我们将应用程序的源代码复制到容器的/app目录中，并使用go build命令编译应用程序。最后，我们使用EXPOSE指令将应用程序的端口暴露出来，并使用CMD指令定义容器启动后要执行的命令。
 - 3 构建Docker镜像
 	- 在完成了Dockerfile的编写后，我们需要使用Docker命令来构建Docker镜像。可以使用以下命令来构建镜像：
-	- ```
-	  # build
+	- # build
 	  docker build -t myapp:1.0 .
 	  
 	  # commit
 	  docker commit -a="作者信息" -m="备注信息" 镜像目录/镜像名称:版本号
-	  ```
 	- 在上述命令中，-t参数用于指定镜像的名称和标签，.表示使用当前目录中的Dockerfile文件进行构建。
 - 4 登录docker仓库
 	- 4.1 登录docker
