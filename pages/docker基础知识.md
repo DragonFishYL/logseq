@@ -58,4 +58,4 @@
 		- ```
 		  docker version
 		  ```
-	- docker version
+	- 3.10卸载旧版本的包
