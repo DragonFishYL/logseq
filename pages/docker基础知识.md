@@ -35,4 +35,11 @@
 		- ```
 		  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 		  ```
-	-
+	- 3.5设置yum源
+		- ```
+		  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+		  ```
+	- 3.6可以查看所有仓库中所有docker版本，并选择特定版本安装
+		- ```
+		  yum list docker-ce --showduplicates | sort -r
+		  ```
