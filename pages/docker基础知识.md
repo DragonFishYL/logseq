@@ -65,4 +65,8 @@
 - 4、常见命令
 	- 4.1 docker run
 		- ```
+		  docker run -it 镜像ID/镜像名称
+		  docker run -it --name newName 镜像ID/镜像名称
+		  docker run -d -p 6789:80 nginx #宿主机6789端口映射到容器80端口，新指定的6789端口在阿里云安全组规则添加即可访问
 		  ```
+	-
