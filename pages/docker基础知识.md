@@ -62,3 +62,7 @@
 		- ```
 		  sudo yum erase docker-common-2:1.12.6-68.gitec8512b.el7.centos.x86_64
 		  ```
+- 4、常见命令
+	- 4.1 docker run
+		- ```
+		  ```
