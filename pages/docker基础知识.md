@@ -26,4 +26,13 @@
 		  uname -r 
 		  ```
 	- 3.2使用 root 权限登录 Centos。确保 yum 包更新到最新(已经是root用户则不需要加sudo切换)。
-		-
+		- sudo yum update
+	- 3.3卸载旧版本(如果安装过旧版本的话)
+		- ```
+		  sudo yum remove docker  docker-common docker-selinux docker-engine
+		  ```
+	- 3.4安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的
+		- ```
+		  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+		  ```
+	-
