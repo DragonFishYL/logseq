@@ -109,3 +109,15 @@
 		  -f 实时追加
 		  -tail 3 看最新3行记录
 		  ```
+	- 4.10 docker top 容器ID/容器名称 (查看容器内运行的进程)
+		- ```
+		  docker top 容器ID/容器名称
+		  ```
+	- 4.11 docker inspect  容器ID/容器名称 (以json形式展示容器内部信息)
+		- ```
+		  docker inspect  容器ID/容器名称
+		  ```
+	- 4.12 docker进入容器中的两种方式
+		- attach：进入容器中执行命令
+		- ```
+		  ```
