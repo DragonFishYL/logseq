@@ -45,5 +45,9 @@
 	- 引用必须总是有效的
 - 字符串
 	- 增
-		- push_str()
-		- push()
+		- 追加字符串 push_str() -> Hello rust
+		- 追加字符 push() -> Hello rust!
+	- 插入
+		- 插入字符 insert() -> Hello, rust!
+		- 插入字符串 insert_str() -> Hello, I like rust!
+	-
