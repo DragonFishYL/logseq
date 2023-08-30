@@ -59,6 +59,21 @@
 			      dbg!(new_string_replace);
 			  }
 			  ```
-		- replacen():该方法可适用于 String 和 &str 类型，replacen() 方法接收三个参数
+		- replacen(): 该方法可适用于 String 和 &str 类型，replacen() 方法接收三个参数
 			- ```
+			  fn main() {
+			      let string_replace = "I like rust. Learning rust is my favorite!";
+			      let new_string_replacen = string_replace.replacen("rust", "RUST", 1);
+			      dbg!(new_string_replacen);
+			  }
 			  ```
+		- replace_range():该方法仅适用于 String 类型,replace_range 接收两个参数
+			- ```
+			  fn main() {
+			      let mut string_replace_range = String::from("I like rust!");
+			      string_replace_range.replace_range(7..8, "R");
+			      dbg!(string_replace_range);
+			  }
+			  ```
+	- 删除
+		-
