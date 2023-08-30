@@ -106,4 +106,17 @@
 			  ```
 		- truncate():  删除字符串中从指定位置开始到结尾的全部字符
 			- ```
+			  fn main() {
+			      let mut string_truncate = String::from("测试truncate");
+			      string_truncate.truncate(3);
+			      dbg!(string_truncate);
+			  }
+			  ```
+		- clear():  清空字符串
+			- ```
+			  fn main() {
+			      let mut string_clear = String::from("string clear");
+			      string_clear.clear();
+			      dbg!(string_clear);
+			  }
 			  ```
