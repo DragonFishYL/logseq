@@ -51,4 +51,12 @@
 		- 插入字符 insert() -> Hello, rust!
 		- 插入字符串 insert_str() -> Hello, I like rust!
 	- 替换
-		-
+		- replace()：可适用于 String 和 &str 类型
+			- ```
+			  fn main() {
+			      let string_replace = String::from("I like rust. Learning rust is my favorite!");
+			      let new_string_replace = string_replace.replace("rust", "RUST");
+			      dbg!(new_string_replace);
+			  }
+			  ```
+		- replacen()
