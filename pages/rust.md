@@ -50,4 +50,5 @@
 	- 插入
 		- 插入字符 insert() -> Hello, rust!
 		- 插入字符串 insert_str() -> Hello, I like rust!
-	-
+	- 替换
+		-
