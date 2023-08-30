@@ -51,7 +51,7 @@
 		- 插入字符 insert() -> Hello, rust!
 		- 插入字符串 insert_str() -> Hello, I like rust!
 	- 替换
-		- replace()：可适用于 String 和 &str 类型,方法接收两个参数
+		- replace()：可适用于 String 和 &str 类型,方法接收两个参数，返回新的字符串
 			- ```
 			  fn main() {
 			      let string_replace = String::from("I like rust. Learning rust is my favorite!");
@@ -59,7 +59,7 @@
 			      dbg!(new_string_replace);
 			  }
 			  ```
-		- replacen(): 该方法可适用于 String 和 &str 类型，replacen() 方法接收三个参数
+		- replacen(): 该方法可适用于 String 和 &str 类型，replacen() 方法接收三个参数，返回新的字符串
 			- ```
 			  fn main() {
 			      let string_replace = "I like rust. Learning rust is my favorite!";
@@ -67,7 +67,7 @@
 			      dbg!(new_string_replacen);
 			  }
 			  ```
-		- replace_range():该方法仅适用于 String 类型,replace_range 接收两个参数
+		- replace_range():该方法仅适用于 String 类型,replace_range 接收两个参数,再原字符串上操作
 			- ```
 			  fn main() {
 			      let mut string_replace_range = String::from("I like rust!");
