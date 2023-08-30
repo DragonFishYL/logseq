@@ -87,4 +87,21 @@
 			      dbg!(string_pop);
 			  }
 			  ```
-		- remove
+		- remove(): 删除并返回字符串中指定位置的字符
+			- ```
+			  fn main() {
+			      let mut string_remove = String::from("测试remove方法");
+			      println!(
+			          "string_remove 占 {} 个字节",
+			          std::mem::size_of_val(string_remove.as_str())
+			      );
+			      // 删除第一个汉字
+			      string_remove.remove(0);
+			      // 下面代码会发生错误
+			      // string_remove.remove(1);
+			      // 直接删除第二个汉字
+			      // string_remove.remove(3);
+			      dbg!(string_remove);
+			  }
+			  ```
+		-
