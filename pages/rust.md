@@ -76,7 +76,7 @@
 			  }
 			  ```
 	- 删除
-		- pop(): 删除最后一个字符串
+		- pop(): 删除最后一个字符串，返回新的字符串
 			- ```
 			  fn main() {
 			      let mut string_pop = String::from("rust pop 中文!");
@@ -87,4 +87,4 @@
 			      dbg!(string_pop);
 			  }
 			  ```
-		-
+		- remove
