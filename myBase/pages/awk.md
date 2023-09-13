@@ -14,3 +14,4 @@
 	- ![image.png](../assets/image_1670925500406_0.png)
 	- // 以“value: ”分割的第二个字段使用gsub匹配双引号为空,然后对大于零的数求和
 	  awk -F "value: " 'BEGIN{sum=0}{gsub(/"/, "",$2); if($2 > 0) sum+=$2; } END{print sum}' /tmp/8880134.log
+- 查找game日志中请求时间超过500
