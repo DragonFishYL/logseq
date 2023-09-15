@@ -28,14 +28,14 @@
 	      duration = substr(durationArr[1], 1, length(durationArr[1])-2)
 	      base = substr(durationArr[1], length(durationArr[1])-1, 2)
 	  	if (base == "ms") {
-	          if (duration > 20) {
+	          if (duration > 30) {
 	              count[cmd]++
 	          }
 	  	}
 	  }
 	  END {
 	      for (cmd in count) {
-	          print "cmd: " cmd ", duration > 20ms count: " count[cmd]
+	          print "cmd: " cmd ", duration > 30ms count: " count[cmd]
 	      }
 	  }' logs/game.log | sort -k7nr -t':' -k3n
 	  ```
