@@ -31,13 +31,13 @@
 	  		duration *= 1000
 	  	}
 	  	
-	      if (duration > 500) {
+	      if (duration > 20000) {
 	          count[cmd]++
 	      }
 	  }
 	  END {
 	      for (cmd in count) {
-	          print "cmd: " cmd ", duration > 500us count: " count[cmd]
+	          print "cmd: " cmd ", duration > 20000us count: " count[cmd]
 	      }
 	  }' logs/game.log | sort -k7nr -t':' -k3n
 	  ```
