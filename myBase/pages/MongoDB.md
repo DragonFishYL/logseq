@@ -84,6 +84,7 @@
 		- 删除
 			- remove 删除
 				- `db.inventory.remove({_id:666001})`
+			- update删除
 - ## 备份与恢复数据
 	- ```
 	  mongodump -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 -o 文件存在路径 
