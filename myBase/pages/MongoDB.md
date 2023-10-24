@@ -78,15 +78,21 @@
 				  db.inventory.findOne({"item":"journal"}).size.h
 				  ```
 			- pretty 格式化查询
-				- `db.inventory.find({}).pretty()`
+				- ```
+				  db.inventory.find({}).pretty()
+				  ```
 			- find 按条件查询
-				- `db.inventory.find({"status":"A"}).sort({"qyt":-1}).limit(2).pretty()`
+				- ```
+				  db.inventory.find({"status":"A"}).sort({"qyt":-1}).limit(2).pretty()
+				  ```
 		- 删除
 			- remove 删除
-				- `db.inventory.remove({_id:666001})`
+				- ```
+				  db.inventory.remove({_id:666001})
+				  ```
 			- update  unset删除指定字段
 				- ```
-				  db.package.update({_id:3},{$unset:{}})
+				  db.package.update({_id:3},{$unset:{"emergency.content":""}})
 				  ```
 - ## 备份与恢复数据
 	- ```
