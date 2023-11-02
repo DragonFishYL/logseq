@@ -11,3 +11,4 @@
 		- ```
 		  ALTER TABLE account_data MODIFY date_of_birth date DEFAULT '0000-00-00' COMMENT '实名认证出生日期';
 		  ```
+	-
