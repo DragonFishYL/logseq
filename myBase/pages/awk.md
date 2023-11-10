@@ -39,4 +39,7 @@
 	      }
 	  }' logs/game.log | sort -k7nr -t':' -k3n
 	  ```
-- 根据错误日志
+- 根据错误日志去重并输出
+	- ```
+	  awk '{for(i=1;i<=3;i++){$i=""};print $0}' ./access_err.log | sort -n | uniq -c
+	  ```
