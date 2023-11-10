@@ -40,4 +40,7 @@
 	- ```
 	  awk '{for(i=1;i<=3;i++){$i=""};print $0}' ./access_err.log | sort -n | uniq -c
 	  ```
-- 按时间排序
+- 将日志按时间排序
+	- ```
+	  awk -F"time=" 'BEGIN{OFS=FS} {gsub(/"/, "", $2); print $0, $2}' /tmp/1000110.log | sort -t'"' -k2,2 > /tmp/1000110.log
+	  ```
