@@ -39,3 +39,4 @@
 	      }
 	  }' logs/game.log | sort -k7nr -t':' -k3n
 	  ```
+- 根据错误日志
