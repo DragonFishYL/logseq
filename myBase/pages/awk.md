@@ -37,10 +37,13 @@
 	  }' logs/game.log | sort -k7nr -t':' -k3n
 	  ```
 - 根据错误日志去重并输出
-	- ```
-	  awk '{for(i=1;i<=3;i++){$i=""};print $0}' ./access_err.log | sort -n | uniq -c
-	  ```
+	- awk '{for(i=1;i<=3;i++){$i=""};print $0}' ./access_err.log | sort -n | uniq -c
 - 将日志按时间排序
 	- ```
 	  awk -F"time=" 'BEGIN{OFS=FS} {gsub(/"/, "", $2); print $0, $2}' /tmp/1000110.log | sort -t'"' -k2,2 > /tmp/1000110.log
 	  ```
+- 按照cmd去重
+	- ```
+	  awk '{ match($0, /cmd: ([^ ]+) ([^ ]+) flow/, cmd); if (!seen[cmd[1] cmd[2]]) { print $0; seen[cmd[1] cmd[2]]=1 } }' /tmp/game_err.log
+	  ```
+-
