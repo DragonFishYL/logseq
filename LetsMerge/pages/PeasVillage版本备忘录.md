@@ -14,3 +14,12 @@
 	- git@47.107.251.91:liwenxuan/datatable-for-gam.git
 	- master
 	- 6e47054fb22ee1738ce5a5828bcd3b7991c94d52
+- git仓库
+	- release
+		- 海外包分支
+	- china
+		- 国服渠道测试包分支
+	- china
+		- 国服开发分支
+	- devel
+		-
