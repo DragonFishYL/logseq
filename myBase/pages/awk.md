@@ -42,8 +42,21 @@
 	- ```
 	  awk -F"time=" 'BEGIN{OFS=FS} {gsub(/"/, "", $2); print $0, $2}' /tmp/1000110.log | sort -t'"' -k2,2 > /tmp/1000110.log
 	  ```
-- 按照cmd去重
+- game日志按照cmd去重并统计其出现的次数
 	- ```
-	  awk '{ match($0, /cmd: ([^ ]+) ([^ ]+) flow/, cmd); if (!seen[cmd[1] cmd[2]]) { print $0; seen[cmd[1] cmd[2]]=1 } }' /tmp/game_err.log
+	  awk '{
+	    if (match($0, /cmd: ([^ ]+) ([^ ]+) flow/, cmd)) {
+	      command = substr($0, RSTART+5, RLENGTH-9);
+	      count[command]++;
+	      if (count[command] == 1) {
+	        uniqueCommands[++uniqueCount] = command;
+	      }
+	    }
+	  }
+	  END {
+	    for (i = 1; i <= uniqueCount; i++) {
+	      print uniqueCommands[i], count[uniqueCommands[i]];
+	    }
+	  }' /tmp/game_error.log
 	  ```
 -
