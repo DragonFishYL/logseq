@@ -17,8 +17,7 @@
 - 查询日志
 	- awk -F "value: " 'BEGIN{sum=0}{gsub(/"/, "",$2); if($2 > 0) sum+=$2; } END{print sum}' /tmp/8880134.log
 - 查找game日志中请求时间超过500us的并按照次数排序
-	- ```
-	  awk -F' ' '/cmd:/ && /duration:/ { 
+	- awk -F' ' '/cmd:/ && /duration:/ { 
 	      cmd = $7
 	      split($0, arr, "duration:")
 	      split(arr[2], durationArr, " ")
@@ -35,7 +34,6 @@
 	          print "cmd: " cmd ", duration > 30ms count: " count[cmd]
 	      }
 	  }' logs/game.log | sort -k7nr -t':' -k3n
-	  ```
 - 根据错误日志去重并输出
 	- awk '{for(i=1;i<=3;i++){$i=""};print $0}' ./access_err.log | sort -n | uniq -c
 - 将日志按时间排序
