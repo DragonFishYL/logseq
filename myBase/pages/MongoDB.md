@@ -101,6 +101,8 @@
 	  ```
 - ## 集合重命名
 	- ```
-	  // mongo集合重命名，必须以admin权限操作指定的  数据库.old集合  to new
+	  // mongo集合重命名
+	  // 必须以admin权限操作指定的  
+	  // 数据库.old集合  to 数据库.new集合
 	  db.getSiblingDB('admin').runCommand({ renameCollection: 'pvp.cur_season_user_data', to: 'pvp.cur_season_user_data_bak'})
 	  ```
