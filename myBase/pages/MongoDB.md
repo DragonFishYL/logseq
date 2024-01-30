@@ -99,3 +99,8 @@
 	  mongodump -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 -o 文件存在路径 
 	  mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop 文件存在路径
 	  ```
+- ## 集合重命名
+	- ```
+	  // mongo集合重命名
+	  db.getSiblingDB('admin').runCommand({ renameCollection: 'pvp.cur_season_user_data', to: 'pvp.cur_season_user_data_bak'})
+	  ```
