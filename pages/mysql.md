@@ -7,5 +7,8 @@
 		- ```
 		  set sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
 		  ```
-	- 2 修改日期默认值
+	- 2 修改主键自增ID
+		- ```
+		  alter table account_data auto_increment=10000000;
+		  ```
 		-
