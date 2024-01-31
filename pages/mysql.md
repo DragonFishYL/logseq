@@ -6,7 +6,7 @@
 	- 2 修改日期默认值
 		- ```
 		  ALTER TABLE account_data MODIFY date_of_birth date DEFAULT NULL COMMENT '实名认证出生日期';
-		  ALTER TABLE finish_time MODIFY date_of_birth date DEFAULT NULL COMMENT '实名认证出生日期';
+		  ALTER TABLE account_data MODIFY finish_time date DEFAULT NULL COMMENT '实名认证出生日期';
 		  ```
 	- 3 删除完数据把日期的默认值再改回来
 		- ```
