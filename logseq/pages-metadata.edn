@@ -151,6 +151,9 @@
  {:block/name "done",
   :block/created-at 1655459816606,
   :block/updated-at 1655459816606}
+ {:block/name "error-log",
+  :block/created-at 1706774180768,
+  :block/updated-at 1706774180768}
  {:block/name "favorites",
   :block/created-at 1655459816605,
   :block/updated-at 1655459816605}
