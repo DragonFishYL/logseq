@@ -46,6 +46,8 @@
 			- `db.guild.getIndexes()`
 		- 删除唯一索引
 			- `db.guild.dropIndex("myIndex")`
+		- 删除联合索引
+			- `db.guild.dropIndex({ "index1": 1, "index2": 1 })`
 	- ## 操作数据
 		- 创建
 			- insert 创建单条数据
