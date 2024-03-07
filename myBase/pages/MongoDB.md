@@ -42,6 +42,7 @@
 			- `db.tableName.drop()`
 		- 重命名集合
 			- `db.adminCommand({renameCollection: "db.collection1", to: "db.collection2"})`
+		-
 	- ## 操作数据
 		- 创建
 			- insert 创建单条数据
