@@ -42,7 +42,10 @@
 			- `db.tableName.drop()`
 		- 重命名集合
 			- `db.adminCommand({renameCollection: "db.collection1", to: "db.collection2"})`
-		-
+		- 查看集合索引
+			- `db.guild.getIndexes()`
+		- 删除唯一索引
+			- `db.guild.dropIndex("myIndex")`
 	- ## 操作数据
 		- 创建
 			- insert 创建单条数据
