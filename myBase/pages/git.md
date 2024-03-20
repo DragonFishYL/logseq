@@ -205,16 +205,16 @@
 	- git diff --cached [file]
 - ### 显示工作区与当前分支最新commit之间的差异
 	- git diff HEAD
-# 显示两次提交之间的差异
-# git diff [first-branch]...[second-branch]
-# 显示今天你写了多少行代码
-# git diff --shortstat "@{0 day ago}"
-# 显示某次提交的元数据和内容变化
-# git show [commit]
-# 显示某次提交发生变化的文件
-# git show --name-only [commit]
-# 显示某次提交时，某个文件的内容
-# git show [commit]:[filename]
+- ### 显示两次提交之间的差异
+	- git diff [first-branch]...[second-branch]
+- ### 显示今天你写了多少行代码
+	- git diff --shortstat "@{0 day ago}"
+- ### 显示某次提交的元数据和内容变化
+	- git show [commit]
+- ### 显示某次提交发生变化的文件
+	- git show --name-only [commit]
+- ### 显示某次提交时，某个文件的内容
+	- git show [commit]:[filename]
 # 显示当前分支的最近几次提交
 # git reflog
 - 远程同步
