@@ -171,7 +171,7 @@
 	  # 新建一个分支，指向某个tag
 	  # git checkout -b [branch] [tag]
 	  ```
-- 查看信息
+- ### 查看信息
 	- #查看本地分支及关联的远程分支信息
 	  git branch -vv
 - ### 显示有变更的文件
@@ -184,13 +184,14 @@
 	- git log -S [keyword]
 - ### 显示某个commit之后的所有变动，每个commit占据一行
 	- git log [tag] HEAD --pretty=format:%s
-# 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件
-# git log [tag] HEAD --grep feature
-# 显示某个文件的版本历史，包括文件改名
-# git log --follow [file]
-# git whatchanged [file]
-# 显示指定文件相关的每一次diff
-# git log -p [file]
+- ### 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件
+	- git log [tag] HEAD --grep feature
+- ### 显示某个文件的版本历史，包括文件改名
+	- git log --follow [file]
+	- git whatchanged [file]
+- ### 显示指定文件相关的每一次diff
+	- git log -p [file]
+- ### 查看某一行内文件
 # 显示过去5次提交
 # git log -5 --pretty --oneline
 # 显示所有提交过的用户，按提交次数排序
