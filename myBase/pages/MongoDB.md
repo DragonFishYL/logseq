@@ -99,10 +99,8 @@
 				  db.package.update({_id:3},{$unset:{"emergency.content":""}})
 				  ```
 - ## 备份与恢复数据
-	- ```
-	  mongodump -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 -o 文件存在路径 
+	- mongodump -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 -o 文件存在路径 
 	  mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop 文件存在路径
-	  ```
 - ## 集合重命名
 	- ```
 	  // mongo集合重命名
