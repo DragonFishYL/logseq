@@ -191,7 +191,7 @@
 	- git whatchanged [file]
 - ### 显示指定文件相关的每一次diff
 	- git log -p [file]
-- ### 查看某一行内容变更记录
+- ## 查看某一行内容变更记录
 	- git log -L 523,543:services/game/handler/user/camp.go
 - ### 显示过去5次提交
 	- git log -5 --pretty --oneline
@@ -215,8 +215,8 @@
 	- git show --name-only [commit]
 - ### 显示某次提交时，某个文件的内容
 	- git show [commit]:[filename]
-# 显示当前分支的最近几次提交
-# git reflog
+- ### 显示当前分支的最近几次提交
+	- git reflog
 - 远程同步
 	- ```
 	  # 下载远程仓库的所有变动
