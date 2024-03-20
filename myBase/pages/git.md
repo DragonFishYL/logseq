@@ -191,19 +191,20 @@
 	- git whatchanged [file]
 - ### 显示指定文件相关的每一次diff
 	- git log -p [file]
-- ### 查看某一行内文件
-# 显示过去5次提交
-# git log -5 --pretty --oneline
-# 显示所有提交过的用户，按提交次数排序
-# git shortlog -sn
-# 显示指定文件是什么人在什么时间修改过
-# git blame [file]
-# 显示暂存区和工作区的差异
-# git diff
-# 显示暂存区和上一个commit的差异
-# git diff --cached [file]
-# 显示工作区与当前分支最新commit之间的差异
-# git diff HEAD
+- ### 查看某一行内容变更记录
+	- git log -L 523,543:services/game/handler/user/camp.go
+- ### 显示过去5次提交
+	- git log -5 --pretty --oneline
+- ### 显示所有提交过的用户，按提交次数排序
+	- git shortlog -sn
+- ### 显示指定文件是什么人在什么时间修改过
+	- git blame [file]
+- ### 显示暂存区和工作区的差异
+	- git diff
+- ### 显示暂存区和上一个commit的差异
+	- git diff --cached [file]
+- ### 显示工作区与当前分支最新commit之间的差异
+	- git diff HEAD
 # 显示两次提交之间的差异
 # git diff [first-branch]...[second-branch]
 # 显示今天你写了多少行代码
