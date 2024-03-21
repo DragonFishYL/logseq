@@ -57,4 +57,7 @@
 	    }
 	  }' /tmp/game_error.log
 	  ```
--
+- json格式化
+	- ```
+	  cat result/RandomMarket.json | grep "600901" | jq '.list[] | select(.id==53)'
+	  ```
